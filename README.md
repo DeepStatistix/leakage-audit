@@ -14,7 +14,7 @@ It has two parts: a **systematic audit** of 140 randomly sampled open-access for
 
 | Folder | What it holds |
 |---|---|
-| `protocol/` | The audit protocol as frozen before screening (v1.0, 7 October 2026), the final version, and the time-stamped amendment history |
+| `protocol/` | The audit protocol as frozen before screening (v1.0, 7 October 2026), the final version, and the time-stamped amendment history; registered (retrospectively) on OSF: https://doi.org/10.17605/OSF.IO/5UBDX |
 | `data/search/` | Search log, screening rules, the random order of all open-access records for each pool, and the title/abstract screening decisions (abstracts are not redistributed; use the OpenAlex ID or DOI) |
 | `data/audit/audit_data.csv` | One row per full text assessed: bibliographic data, SJR quartile, eligibility, codes for items A1–A10 with the supporting evidence (quotation and page), flags F1–F3, and the leakage-risk level |
 | `data/reliability/` | The two independent codings of the sealed subsample, the codebook-conformance corrections, the adjudication of every disagreement, and the agreement statistics |
