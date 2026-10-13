@@ -1,0 +1,36 @@
+paper_id,item,original,corrected,rule,reason,author_approved
+S1_002,A7,N,NR,"Codebook A7: no naive benchmark reported = NR (A7 has no N code; C only for persistence, seasonal-naive or climatology)",Evidence states no persistence/naive baseline is reported,2026-10-12
+S1_146,A7,N,NR,"Codebook A7: no naive benchmark reported = NR (A7 has no N code; C only for persistence, seasonal-naive or climatology)",Evidence states no persistence/naive baseline is reported,2026-10-12
+S2_025,A7,N,NR,"Codebook A7: no naive benchmark reported = NR (A7 has no N code; C only for persistence, seasonal-naive or climatology)",Evidence states no persistence/naive baseline is reported,2026-10-12
+S2_014,A7,N,NR,"Codebook A7: no naive benchmark reported = NR (A7 has no N code; C only for persistence, seasonal-naive or climatology)",Evidence states no persistence/naive baseline is reported,2026-10-12
+S2_033,A7,N,NR,"Codebook A7: no naive benchmark reported = NR (A7 has no N code; C only for persistence, seasonal-naive or climatology)",Evidence states no persistence/naive baseline is reported,2026-10-12
+S2_024,A7,N,NR,"Codebook A7: no naive benchmark reported = NR (A7 has no N code; C only for persistence, seasonal-naive or climatology)",Evidence states no persistence/naive baseline is reported,2026-10-12
+S2_034,A7,N,NR,"Codebook A7: no naive benchmark reported = NR (A7 has no N code; C only for persistence, seasonal-naive or climatology)",Evidence states no persistence/naive baseline is reported,2026-10-12
+S1_062,A7,N,NR,"Codebook A7: no naive benchmark reported = NR (A7 has no N code; C only for persistence, seasonal-naive or climatology)",Evidence: MNF comparator is not a naive forecasting baseline,2026-10-12
+S2_012,A7,N,NR,"Codebook A7: no naive benchmark reported = NR (A7 has no N code; C only for persistence, seasonal-naive or climatology)","Evidence: naive only used as MASE denominator, no naive model reported",2026-10-12
+S2_035,A7,C,NR,"Codebook A7: no naive benchmark reported = NR (A7 has no N code; C only for persistence, seasonal-naive or climatology)","Evidence: baselines are ARIMA, GRU, EEMD-ARIMA (not naive)",2026-10-12
+S2_043,A7,C,NR,"Codebook A7: no naive benchmark reported = NR (A7 has no N code; C only for persistence, seasonal-naive or climatology)","Evidence: comparators are LSTM, NAR, HHT-NAR (not naive)",2026-10-12
+S1_146,A8,N,NR,Codebook A8: N = test claimed but no results; nothing claimed and nothing reported = NR,Evidence states no formal test is reported; none is claimed,2026-10-12
+S2_025,A8,N,NR,Codebook A8: N = test claimed but no results; nothing claimed and nothing reported = NR,Evidence states no formal test is reported; none is claimed,2026-10-12
+S2_012,A8,N,NR,Codebook A8: N = test claimed but no results; nothing claimed and nothing reported = NR,Evidence states no formal test is reported; none is claimed,2026-10-12
+S2_014,A8,N,NR,Codebook A8: N = test claimed but no results; nothing claimed and nothing reported = NR,Evidence states no formal test is reported; none is claimed,2026-10-12
+S2_033,A8,N,NR,Codebook A8: N = test claimed but no results; nothing claimed and nothing reported = NR,Evidence states no formal test is reported; none is claimed,2026-10-12
+S2_024,A8,N,NR,Codebook A8: N = test claimed but no results; nothing claimed and nothing reported = NR,Evidence states no formal test is reported; none is claimed,2026-10-12
+S2_034,A8,N,NR,Codebook A8: N = test claimed but no results; nothing claimed and nothing reported = NR,Evidence states no formal test is reported; none is claimed,2026-10-12
+S2_043,A8,N,NR,Codebook A8: N = test claimed but no results; nothing claimed and nothing reported = NR,Evidence states no formal test is reported; none is claimed,2026-10-12
+S1_062,A9,NR,N,Codebook A9: neither code nor data public (or on request) = N; only one of them = NR,Evidence: neither raw data nor implementation shown to be public,2026-10-12
+S2_050,A9,NR,N,Codebook A9: neither code nor data public (or on request) = N; only one of them = NR,"Evidence: no code repository, data repository or supplement",2026-10-12
+S2_025,A9,NR,N,Codebook A9: neither code nor data public (or on request) = N; only one of them = NR,Evidence: data on request; no public code,2026-10-12
+S2_012,A9,NR,N,Codebook A9: neither code nor data public (or on request) = N; only one of them = NR,Evidence: data on request; no public code,2026-10-12
+S2_014,A9,NR,N,Codebook A9: neither code nor data public (or on request) = N; only one of them = NR,Evidence: no public code repository; no public data stated,2026-10-12
+S2_024,A9,NR,N,Codebook A9: neither code nor data public (or on request) = N; only one of them = NR,Evidence: only third-party R packages named; no own code or data release,2026-10-12
+S2_034,A9,NR,N,Codebook A9: neither code nor data public (or on request) = N; only one of them = NR,Evidence: no implementation or data release,2026-10-12
+S2_043,A9,NR,N,Codebook A9: neither code nor data public (or on request) = N; only one of them = NR,Evidence: data on request; no public code,2026-10-12
+S2_034,A5,C,NR,Codebook A5: C needs horizon stated AND input construction stated; otherwise NR,Evidence: 'exact input-window configuration and forecast-generation procedure are not fully reported',2026-10-12
+S2_033,A5,C,NR,Codebook A5: C needs horizon stated AND input construction stated; otherwise NR,Evidence: 'detailed input-window specifications for WNN are not provided',2026-10-12
+S2_050,A5,C,NR,Codebook A5: C needs horizon stated AND input construction stated; otherwise NR,Evidence describes input ratios but no forecast horizon is stated,2026-10-12
+S2_043,A5,C,NR,Codebook A5: C needs horizon stated AND input construction stated; otherwise NR,"Evidence in A5 describes tuning, not inputs or horizon; neither is stated",2026-10-12
+S2_033,A1,C,NR,"Codebook A1: proportion only, with no statement of order = NR",Evidence: 'does not establish whether this split is chronological',2026-10-12
+S2_035,A1,C,NR,"Codebook A1: proportion only, with no statement of order = NR","Evidence: 9:1 ratio; order inferred ('implies'), not stated",2026-10-12
+S1_002,A4,NR,NA,"Codebook A4: no decomposition, smoothing or filtering = NA","Evidence: 'No time-series decomposition, smoothing or filtering procedure is reported'",2026-10-12
+S2_043,A2,C,NR,Codebook A2: C needs a separate validation block / rolling origin / blocked CV,Evidence in A2 describes the train/test split only; A6 evidence says test-set use for selection is unclear,2026-10-12

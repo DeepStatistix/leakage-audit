@@ -1,0 +1,108 @@
+paper_id,item,final_code,adjudication_note,status,author_confirmed
+S1_002,A1,C,"Appendix F (PDF p. 39): 75%/25% split, 'training dataset is chronically earlier than ... test'; wind: last five days of each season. AI wrongly said the details were not in the article.",agreed with coder 1,2026-10-12
+S1_002,A5,C,Appendix F (PDF p. 39): 168x3 one-week input to predict 24h-ahead load; NWP inputs are forecasts available at the forecast time.,agreed with coder 1,2026-10-12
+S1_002,A9,C,Data Set and Software statement (PDF p. 20) shares data and software; code/data repository github.com/INFORMSJoC/2023.0034 (references). AI missed the link.,agreed with coder 1,2026-10-12
+S1_002,F3,N,Test-set reward (Sec. 3.2) is already captured by A2 = N and A6 = N. F3 needs a stated procedure missing from the results; the rolling-window experiment is described and reported (Appendix pp. 48-50).,agreed with AI,2026-10-12
+S1_015,FT_eligible,N,"Verified: the 'test set' is the 90 days before the earthquake and is used to detect anomalies (deviation from prediction), not to measure forecast accuracy; RMSE compares models on aseismic data. Exclusion 'Classification/anomaly task' holds.",agreed with coder 1,2026-10-12
+S1_016,FT_eligible,N,"Verified: article body is in Indonesian; only the abstract is English. Protocol section 4 criterion 1 requires English. Coder 1's content reading is accurate, but the language criterion excludes it (Not English).",agreed with AI,2026-10-12
+S1_021,A10,N,Abstract and conclusion claim '87% of accuracy' but only RMSE is reported; the headline metric matches no reported metric (metric under a different name). AI's 'Mean(sales)' point is wrong: that formula belongs to a cited study.,neither - changed,2026-10-12
+S1_021,A2,NR,Both quotes exist. The grid-search sentence (p2) is a generic description of DL; the reported model uses 'default values' and neurons 2/4/6 compared on results (p6). No validation procedure for the reported model.,agreed with coder 1,2026-10-12
+S1_021,A6,NR,p5-6: 'A random value is set at number of epochs and look back'; 'parameters of GRU are assigned to default values'. AI relied on the generic grid-search sentence.,agreed with coder 1,2026-10-12
+S1_021,F1,Y,Consistent with A10 = N: undefined '87% accuracy' headline for a regression evaluated by RMSE.,agreed with AI,2026-10-12
+S1_029,A1,C,p5: 'The dataset was sorted using dates ... to maintain chronological order' then 80:20 split. Coder 1 missed the sorting sentence.,agreed with AI,2026-10-12
+S1_029,A3,N,"p5 verified: MinMaxScaler on features and target, then sequences, 'In the end' the 80:20 split (scaling before split).",agreed with coder 1,2026-10-12
+S1_029,A5,C,"p5 verified: sequences of four points, 'the data point immediately following each sequence served as the goal value' (h = 1).",agreed with coder 1,2026-10-12
+S1_034,A1,C,"Verified: 'the 80th cycle is used as the starting point for prediction' and 'first to 80th groups ... training set, remaining ... predicted online'.",agreed with coder 1,2026-10-12
+S1_062,A1,N,Verified p8-9: 'groupings are randomly split into train (80%) and test (20%) sets'.,agreed with coder 1,2026-10-12
+S1_062,A2,C,"Verified: 'training is conducted with 10% cross-validation. After hyperparameter tuning, the best performing ... in terms of IA'. Selection not on the test set; the random split itself is coded under A1.",agreed with coder 1,2026-10-12
+S1_062,A3,N,"Verified p3-4: Kalman smoothing completes missing/invalid data 'based on available past and future measurements', applied to the flow data before groupings are drawn.",agreed with coder 1,2026-10-12
+S1_062,A4,NR,Verified: 'additive time series decomposition is used to break down the input data of both LKG and NLKG groupings' (Sec. 4.1.1). Decomposition exists (AI's NA wrong); scope relative to outputs not fully stated.,agreed with coder 1,2026-10-12
+S1_062,A5,C,"Verified: inputs 672 points (one week), outputs 335 points.",agreed with coder 1,2026-10-12
+S1_062,A6,C,"Verified: hyperparameter tuning with 10% cross-validation, best architecture by IA.",agreed with coder 1,2026-10-12
+S1_062,F3,N,"The claimed statistical assessment vs MNF is reported (Table 1, stationarity tests); no stated procedure is missing from the results. Coder 1's note gives no specific F3 reason.",agreed with AI,2026-10-12
+S1_074,A2,N,Verified p10: 'the linear kernel outperformed the other kernels ... in the testing phase'; kernel and lag chosen on test performance.,agreed with coder 1,2026-10-12
+S1_074,A3,NA,No scaling or imputation mentioned; raw m3/s values in tables.,agreed with coder 1,2026-10-12
+S1_074,A5,C,"Verified p9: 'using the previous values as input to predict the later values, as in Table 3' (lags 1-5, one step ahead).",agreed with coder 1,2026-10-12
+S1_074,A9,NR,Verified: Data Availability 'within the manuscript and its Supporting Information'; S1 Data XLSX of daily inflow; no code. Only data -> NR. AI missed the statement.,agreed with coder 1,2026-10-12
+S1_074,F3,Y,"Table 1 and the Fig. 3 flowchart define a 'Training & Validation' period, but no validation results are reported (stated procedure absent from results).",agreed with coder 1,2026-10-12
+S1_078,A1,C,"Verified p5 and Figure 3 (Data Separation): training, validation and test blocks in time order.",agreed with coder 1,2026-10-12
+S1_078,A10,N,Verified Table 3: R2 0.996774 / MSE 62001 (TST) and R2 0.899122 / MSE 293071 (LSTM) imply test variances of 19.2M vs 2.9M for the same test set (6.6x); internally impossible.,agreed with coder 1,2026-10-12
+S1_078,A3,NR,"Preprocessing (indicators, correlation re-ranking, min-max) is described in Sec. 3.1 before the split in Sec. 3.3, but the text never says scaling was fitted on the full data. Section order alone is not explicit evidence for N.",neither - changed,2026-10-12
+S1_078,A5,C,Verified: 'input sequence length ... 10 time steps ... prediction sequence length ... 2 time steps'.,agreed with coder 1,2026-10-12
+S1_078,A7,NR,"MASE uses a naive scaling, but no naive model is reported (codebook: C only if a naive benchmark is reported).",agreed with coder 1,2026-10-12
+S1_078,A9,NR,Verified: Kaggle dataset URL; no code. Only data -> NR. AI missed the URL.,agreed with coder 1,2026-10-12
+S1_078,F1,Y,Consistent with A10 = N (R2 and MSE incompatible across models).,agreed with coder 1,2026-10-12
+S1_078,F2,N,"Protocol 7.4: F2 = improvement over persistence implausibly large, or accuracy flat across horizons. Here MASE 4.75 shows the model is WORSE than naive; the R2 0.997 / MASE conflict is a metric problem (A10/F1 = N/Y), not implausible skill.",neither - changed,2026-10-12
+S1_087,A10,N,"Verified Table V (PDF p. 18): ensemble MSE 0.089 vs RMSE 0.208 (sqrt = 0.298); CatBoost RMSE 0.441 < MSE 0.452, impossible for errors below 1. Also ARIMA 'returned null values' yet has MSE 0.329.",agreed with coder 1,2026-10-12
+S1_087,A9,NR,Verified: UCI repository URL for the Tamilnadu dataset; no code. Only data -> NR. AI missed the URL.,agreed with coder 1,2026-10-12
+S1_087,F1,Y,"Protocol 7.2 convention: every A10 = N is also F1 = Y. A10 = N is verified (Table V: RMSE < MSE, RMSE != sqrt(MSE)); both coders had F1 = N.",neither - changed,2026-10-12
+S1_090,A2,N,"Verified Sec. 5.3: 'when the number of hidden layers is 10, the prediction results ... exhibit lower RMSE ... a suitable neural network size can be chosen' using test-period results (Table 3).",agreed with coder 1,2026-10-12
+S1_090,A3,NR,"Eq. 18 uses 'maximum and minimum values in the sample data'. Table 2 (PDF p. 6) shows only 1997-2006 scaled to 0..1, all within the training years, so whole-series fitting is not established. AI's inference was too strong.",agreed with coder 1,2026-10-12
+S1_090,A6,N,Verified: SFLA fitness = RMSE of GDP prediction; neuron count and SFLA parameters compared on test-period RMSE (Secs 5.3-5.4).,agreed with coder 1,2026-10-12
+S1_090,A9,NR,"Both quotes exist: data 'available from the corresponding author upon request', but the data are 'mainly obtained from the website of the National Bureau of Statistics (http://www.stats.gov.cn/)'. Public data source, no code -> NR.",agreed with AI,2026-10-12
+S1_093,A1,C,"Verified: '80% of the patients to train ... 20% for testing'; each patient yields one instance (months 0-3 -> 4-15), so repeated random splits hold out whole patient trajectories. A random split of whole series is not a split within a time series; 'shuffled the learning instances' refers to training order.",agreed with AI,2026-10-12
+S1_093,A2,NR,"Hyperparameters by 5-fold CV (training patients), but 'top-performing models were selected based on their average RMSE from the previous phase', and that phase also reports test results; the basis of the selection is ambiguous.",agreed with coder 1,2026-10-12
+S1_093,A3,N,"Both quotes exist. Scalers are training-only, but linear interpolation fills months without visits using later visits (Fig. 2), so input months up to 3 can use visit values after the forecast origin (next-value interpolation = A3 N).",agreed with coder 1,2026-10-12
+S1_093,A5,C,"Verified: first three months used to predict month 4, then recursively to month 15; results for the next 3, 6, 9 and 12 months.",agreed with coder 1,2026-10-12
+S1_093,A7,C,Verified: 'a Naive model that assumed the ALSFRS score remained constant after the third month'. AI missed it.,agreed with coder 1,2026-10-12
+S1_093,A8,C,Verified: 100 repeated random splits and 'Table 3 provides information on the confidence intervals'.,agreed with coder 1,2026-10-12
+S1_098,A2,C,"Verified: 'after comparing the prediction accuracy based on the 5-fold cross-validation ... p = 1 is selected'; selection inside the training data, before testing. Fold design not stated, but the test set is not used.",agreed with coder 1,2026-10-12
+S1_098,A3,NA,No scaling or imputation described; raw temperatures modelled.,agreed with coder 1,2026-10-12
+S1_098,A4,NA,"The sliding-window Volterra filter is the forecasting model itself, not a decomposition/smoothing/filtering preprocessing step, so A4 does not apply.",agreed with AI,2026-10-12
+S1_098,A6,C,"Verified: m and t from mutual information / false nearest neighbours, p from 5-fold CV on training data.",agreed with coder 1,2026-10-12
+S1_120,A1,C,"Verified p189: in-sample 25 observations 1980-2005, out-sample 8 observations 2006-2012. AI missed it.",agreed with coder 1,2026-10-12
+S1_120,A2,NR,"Table 1 selects ensemble trials by best MAPE, but the data behind Table 1 are not stated; ANN by 'trial-and-error'. Selection on the test set is possible but not stated.",agreed with coder 1,2026-10-12
+S1_120,A3,NA,No scaling or imputation; raw and differenced values.,agreed with coder 1,2026-10-12
+S1_120,A6,NR,Parameters by 'trial-and-error' and Table 1 MAPE on unstated data.,agreed with coder 1,2026-10-12
+S1_122,A10,N,"Verified Table 5: Binance Coin, LSTM column: RMSE 0.0905 but MAE 0.8115 (MAE > RMSE impossible). AI missed it.",agreed with coder 1,2026-10-12
+S1_122,A6,C,Verified Sec. 5.3: 'several experiments with different configurations on the training set to determine optimal hyperparameters'. AI missed it.,agreed with coder 1,2026-10-12
+S1_122,A8,NR,"Verified: model run 100 times to show run-to-run spread (Fig. 10). That is training variability, not a DM test, forecast intervals or multiple-origin evaluation, so the codebook gives NR.",agreed with AI,2026-10-12
+S1_122,F1,Y,Consistent with A10 = N.,agreed with coder 1,2026-10-12
+S1_127,A1,NR,"Text: 'organized and split (i.e., in train:validation:test) as in previous studies [60, 62]' with ratios 6:2:2 / 7:1:2; order is not stated in this paper. These benchmark splits are chronological by convention; if the author accepts a cited standard split as C, apply that to every paper.",agreed with AI,2026-10-12
+S1_127,A2,C,A separate validation partition exists in every dataset split (Table 4).,agreed with coder 1,2026-10-12
+S1_133,A10,N,Verified: abstract claims 'MAPE ... around 0.01%' while Table 1 reports SMAPE only.,agreed with coder 1,2026-10-12
+S1_133,A2,N,"Verified p6: 'We decided to use SMAPE as the basis for selecting the best model because this technique can be used to evaluate the diversity between training and testing'; Table 1 gives training and testing SMAPE, so the best model is chosen using test results.",agreed with AI,2026-10-12
+S1_133,A5,NR,The 'next 30 days' is a post-sample forecast without observed outcomes; the horizon of the evaluated test predictions is not stated.,agreed with AI,2026-10-12
+S1_133,F1,Y,Consistent with A10 = N.,agreed with coder 1,2026-10-12
+S1_133,F3,Y,Verified Figure 1 (p5): 'Cross Validation' and 'Validate the model' steps; no cross-validation or validation results reported (Table 1 has training and testing only).,agreed with coder 1,2026-10-12
+S1_139,FT_eligible,N,"Verified: no training/testing split or hold-out is described anywhere; errors are compared with a naive model without stating the evaluation data, so out-of-sample accuracy cannot be established.",agreed with coder 1,2026-10-12
+S1_142,A5,C,"Verified: input sequence Xi = [xi..xi+lb-1] predicts yi = x(i+lb); Table 5 input_shape (24,1), i.e. 24 hourly inputs to predict the next hour. AI missed it.",agreed with coder 1,2026-10-12
+S1_142,A8,C,Verified Table 7 (p23): Prophet Yhat_Lower / Yhat_Upper prediction intervals reported for the test hours.,agreed with coder 1,2026-10-12
+S1_146,A1,C,"p4: 'partition the data ... using appropriate date ... the training size should be 65% of the overall length of the data frame', test = remainder: a date-ordered 65/35 split.",agreed with AI,2026-10-12
+S1_146,A10,N,Verified: regression models reported with classification-style 'accuracy of roughly 52%' and a regression tree with '67.53% categorization rate': metrics mislabelled for a continuous forecast.,agreed with coder 1,2026-10-12
+S1_146,A5,C,p4: 'time step will now be set to 100 ... the first 100 elements ... the 101st element' (100 past days predict the next day).,agreed with AI,2026-10-12
+S1_146,F1,Y,Consistent with A10 = N.,agreed with coder 1,2026-10-12
+S1_146,F3,N,No validation procedure or test is stated in the methods and then missing from the results; Figure 10 is a code overview. Coder 1's note gives no specific F3 reason.,agreed with AI,2026-10-12
+S1_163,A3,NA,No scaling or imputation described; differenced counts modelled directly.,agreed with coder 1,2026-10-12
+S2_012,A10,N,"Verified: one passage gives the 1-day moDWT-Lasso-LSTM 'SMAPE ≈ 4.39700%', another 'MASE ≈ 4.39700 and SMAPE ≈ 3.48910%' (value assigned to the wrong metric). MASE 4.397 at 1 day vs 0.796 at 14 days is also implausible.",agreed with coder 1,2026-10-12
+S2_012,A3,N,"Verified Sec. 3.3.5: 'During normalization, the training and testing data partitions for a particular model scenario are combined.' AI's ambiguity came from a Hyperopt sentence in the next section.",agreed with coder 1,2026-10-12
+S2_012,A4,C,"Verified: moDWT 'relying solely on current and past time series data ... without requiring future data', and boundary-affected coefficients at the start of the series are removed (causal by construction).",agreed with coder 1,2026-10-12
+S2_012,A6,C,Verified Sec. 3.3.6: Hyperopt for each lead time; 'The training data partitions are used in this process.',agreed with coder 1,2026-10-12
+S2_012,F1,Y,Consistent with A10 = N.,agreed with coder 1,2026-10-12
+S2_012,F3,N,No stated validation procedure or test is missing from the results; coder 1's note gives no specific F3 reason.,agreed with AI,2026-10-12
+S2_014,A10,N,"Verified: text names EMD-KELM as a comparator (p14, SG Dec. values) while Table 3 labels the row EMD-LSSVM. The claim that Eqs. 28-29 lack absolute values is not supported: the extracted equations contain the |.| bars.",agreed with coder 1,2026-10-12
+S2_014,F1,Y,Consistent with A10 = N (model label mismatch).,agreed with coder 1,2026-10-12
+S2_014,F2,Y,"Proposed 1-step RMSE 0.03-0.06 m/s on 10-minute wind speed vs 1.05 m/s for KELM and SVR (about 17x smaller); far beyond what causal pipelines achieve (Experiment 1), consistent with decomposition leakage.",agreed with coder 1,2026-10-12
+S2_014,F3,N,No procedure stated in the methods is missing from the results; coder 1's note gives no specific F3 reason.,agreed with AI,2026-10-12
+S2_024,A10,C,Equations 12 and 14 do contain absolute-value bars in the extracted text (|y - y~| / y). No metric inconsistency found.,agreed with AI,2026-10-12
+S2_024,A2,NR,"Verified: r is determined by w-correlation; 'Another way to determine r is by examining the forecast accuracy' is mentioned as an alternative, not as what was done. Test-set selection not established.",agreed with AI,2026-10-12
+S2_024,A4,NR,"SSA is described on a series of length N and the test set is the last g = 12 of N, which suggests full-series decomposition, but the paper never states whether the test observations enter the SSA used for forecasting. Codebook: timing not stated = NR.",agreed with AI,2026-10-12
+S2_024,F1,N,Consistent with A10 = C.,agreed with AI,2026-10-12
+S2_024,F3,N,The authors say standard errors 'could also be obtained' but never claim to report them; no stated procedure is missing.,agreed with AI,2026-10-12
+S2_025,A10,N,Verified: abstract gives GPS105 SA-LSTM RMSE 0.3251 / MAPE 1.6785 and LSTM 0.6248 / 2.9130; Table 2 (cumulative displacement) gives 0.4372 / 2.2320 and 1.1982 / 6.1306.,agreed with coder 1,2026-10-12
+S2_025,F1,Y,Consistent with A10 = N.,agreed with coder 1,2026-10-12
+S2_025,F3,N,No stated procedure is missing from the results; the date-range discrepancy coder 1 notes belongs under A10/notes.,agreed with AI,2026-10-12
+S2_033,F1,N,"No metric or table-label inconsistency found in Tables 1-10 (ARIMA/WNN RMSE per country); A10 = C. If coder 1 found a specific label error, cite it and set A10 = N and F1 = Y together.",agreed with AI,2026-10-12
+S2_033,F3,N,No stated procedure is missing from the results.,agreed with AI,2026-10-12
+S2_034,A10,N,"Verified: text introduces MAPE, Eq. 14 defines 'MARE', and the tables report MAPE (metric named inconsistently).",agreed with coder 1,2026-10-12
+S2_034,A3,C,"Verified p4: preprocessing 'on the training dataset, including smoothing, outlier removal, normalization ... The test dataset retains inherent data'.",agreed with coder 1,2026-10-12
+S2_034,F1,Y,Consistent with A10 = N.,agreed with coder 1,2026-10-12
+S2_034,F3,N,No stated procedure is missing from the results; coder 1's note gives no specific F3 reason.,agreed with AI,2026-10-12
+S2_035,A8,C,"Verified: paired-sample t-tests on the 24 test observations with p-values vs ARIMA, GRU and EEMD-ARIMA. AI missed it.",agreed with coder 1,2026-10-12
+S2_042,FT_eligible,N,"No train/test split or hold-out described anywhere (only 'training sequence' wording), so out-of-sample accuracy cannot be established; same rule as S1_139.",agreed with coder 1,2026-10-12
+S2_043,A10,N,Same text-table conflict as F1 (18.98 vs 2.54 m/s RMSE).,neither - changed,2026-10-12
+S2_043,A3,NR,"Both quotes exist: 'data normalization is not required' (p10), and Step 1 'Apply the Cross-validation method to compute the bias and scaling factors for the decomposed wind speed subsequence data' before Step 2 partitions. 'Bias and scaling factors' may be NAR model parameters rather than data scaling; ambiguous.",neither - changed,2026-10-12
+S2_043,F1,Y,"Verified: text reports the optimized model with 'RMSE of 18.9818 m/s, an MAE of 14.1063 m/s, and an R2 value of 0.8827', while the table and later text give 2.5375 / 1.8072 / 0.9215. A10 should be N to match (see the confirm list).",agreed with coder 1,2026-10-12
+S2_043,F3,N,No stated procedure is missing from the results.,agreed with AI,2026-10-12
+S2_050,F2,N,"Protocol 7.4 F2 needs a comparison with persistence or near-flat horizon decay; the paper has one horizon and no naive comparison. Price-level R2 0.98-0.99 is typical even for persistence, so the leakage is coded under A4 = N.",agreed with AI,2026-10-12
+S2_050,F3,N,No stated procedure is missing from the results.,agreed with AI,2026-10-12

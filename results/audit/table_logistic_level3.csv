@@ -1,0 +1,8 @@
+,OR,CI_low,CI_high,p
+const,0.305,0.133,0.696,0.005
+decomposition,1.582,0.754,3.322,0.225
+year_c,1.029,0.862,1.228,0.756
+dom_Energy,2.4,0.973,5.924,0.057
+dom_Finance / economics,2.046,0.734,5.707,0.171
+dom_Hydrology / climate / ocean,1.672,0.57,4.903,0.349
+quartile_Q1Q2,1.19,0.531,2.668,0.673

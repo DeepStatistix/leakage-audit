@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use these data or code, please cite the paper and this repository."
+title: "Are time-series forecasts really out-of-sample? Data and code"
+type: software
+authors:
+  - family-names: Gul
+    given-names: Aqib
+version: 1.0.0
+date-released: 2026-10-14
+license: MIT
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Gul
+      given-names: Aqib
+  title: "Are time-series forecasts really out-of-sample? A systematic audit of information leakage in forecasting research"
+  year: 2026

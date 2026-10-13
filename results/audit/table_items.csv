@@ -1,0 +1,11 @@
+,item,C,N,NR,NA,S1_C,S1_N,S1_NR,S1_NA,S2_C,S2_N,S2_NR,S2_NA
+A1,Data split,78,9,53,0,48,9,43,0,30,0,10,0
+A2,Validation / model selection,45,14,79,2,36,13,49,2,9,1,30,0
+A3,Scaling / imputation,7,26,97,10,3,17,70,10,4,9,27,0
+A4,Decomposition / smoothing,6,10,33,91,1,3,6,90,5,7,27,1
+A5,Inputs and horizon,72,3,65,0,48,3,49,0,24,0,16,0
+A6,Hyperparameter tuning,23,11,102,4,18,7,71,4,5,4,31,0
+A7,Naive baseline,15,0,125,0,11,0,89,0,4,0,36,0
+A8,Statistical comparison,25,0,115,0,17,0,83,0,8,0,32,0
+A9,Reproducibility,8,89,43,0,5,65,30,0,3,24,13,0
+A10,Metric consistency,121,18,1,0,88,11,1,0,33,7,0,0

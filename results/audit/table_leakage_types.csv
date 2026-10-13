@@ -1,0 +1,7 @@
+type,S1,S2,total,pct_of_level3
+Split (random / shuffled),9,0,9,16.1
+Model selection on test,13,1,14,25.0
+"Preprocessing (scaling, imputation)",17,9,26,46.4
+Decomposition / smoothing,3,7,10,17.9
+Target / horizon / inputs,3,0,3,5.4
+Tuning on test,7,4,11,19.6
