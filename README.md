@@ -1,5 +1,7 @@
 # Are time-series forecasts really out-of-sample? Data and code
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23346658.svg)](https://doi.org/10.5281/zenodo.23346658)
+
 This repository contains the data and code needed to reproduce the results of
 
 > Gul, A. (2026). Are time-series forecasts really out-of-sample? A systematic audit of information leakage in
@@ -75,4 +77,5 @@ remains with their authors and publishers.
 
 ## Citation
 
-Please cite the paper and this repository (`CITATION.cff`).
+Please cite the paper and this repository: Gul, A. (2026). *Are time-series forecasts really out-of-sample? Data and
+code* (Version 1.0.0) [Data set and software]. Zenodo. https://doi.org/10.5281/zenodo.23346658

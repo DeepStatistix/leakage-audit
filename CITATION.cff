@@ -6,6 +6,8 @@ authors:
   - family-names: Gul
     given-names: Aqib
 version: 1.0.0
+doi: 10.5281/zenodo.23346658
+repository-code: "https://github.com/DeepStatistix/leakage-audit"
 date-released: 2026-10-14
 license: MIT
 preferred-citation:
