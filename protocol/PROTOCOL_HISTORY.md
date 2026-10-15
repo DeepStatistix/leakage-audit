@@ -8,3 +8,4 @@ Every version of the protocol was committed to the project repository with a tim
 | `40ea569` | 2026-10-08 11:11:03 +0530 | Protocol: sole-author reliability design (test-retest + independent AI rating) |
 | `c0bd6ac` | 2026-10-11 12:44:52 +0530 | AI-assisted audit design; sealed reliability subsample; first coded papers |
 | `c24393c` | 2026-10-12 12:06:45 +0530 | Protocol 7.2: record coding conventions settled during reliability adjudication |
+| `amendment` | 2026-10-15 13:30:00 +0530 | Protocol 7.5, 9, 10b, 11: add second independent human coder for sealed reliability subsample |

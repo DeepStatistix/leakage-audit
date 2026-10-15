@@ -2,10 +2,10 @@
 
 ## Are Time-Series Forecasts Really Out-of-Sample? A Systematic Audit of Information Leakage in Forecasting Research
 
-**Version** 1.0 (draft for registration) · **Date** 7 October 2026
-**Investigator** Aqib Gul (sole author and coder)
-**Registration** Open Science Framework (OSF Registries, "Generalized Systematic Review" template); the protocol is also frozen by a dated commit in the project repository.
-**Status at registration:** search not yet run; no papers screened or coded. Pilot experiments on public data (Experiment 1) have been run to calibrate the experimental design. They do not involve the audit sample.
+**Version** Final (with amendments) · **Date** 15 October 2026
+**Investigators** Aqib Gul (lead author and primary coder); Imran Khan (second independent human coder, validation)
+**Registration** Open Science Framework (OSF Registries, "Generalized Systematic Review" template, registered retrospectively: https://doi.org/10.17605/OSF.IO/5UBDX); the protocol versions and amendments are frozen by dated commits in the project repository.
+**Status:** Protocol finalized post-audit; includes amendments and deviations reported in the manuscript (Supplementary Material S1.6). Initial version (v1.0) was committed on 7 October 2026 before screening began.
 
 ---
 
@@ -146,18 +146,24 @@ The level is computed automatically in the spreadsheet. Level 4 is assigned only
 - **F3 Claim–evidence gap:** a validation procedure stated in the methods or a flowchart (e.g. rolling origin, DM test) is absent from the results.
 
 ### 7.5 Reliability
-**Design: AI-assisted extraction with full human verification, plus independent double coding of a subsample.**
+**Design: AI-assisted extraction with full human verification, sealed double coding, and second independent human coding.**
 
 1. **AI extraction (all papers).** A large language model (Claude, Anthropic; model and dates reported) reads each full text and records the full-text eligibility decision, the study descriptors, codes for A1–A10 and F1–F3, an evidence quotation with page number for every code, and notes.
 2. **Human verification (all papers).** The author checks every AI code against its evidence and the full text, and confirms or corrects it. Corrections and their reasons are logged. **The final codes are the author's**; the AI never has the final say.
-3. **Independent double coding (20% subsample).** Before verification starts, a random 20% of the eligible papers (seed 2027, proportional to the pools) is drawn. For these papers the AI codes are sealed, and the author codes them **from scratch without seeing the AI codes**. Agreement between the independent human codes and the sealed AI codes is reported with Cohen's κ (unweighted for items, linearly weighted for level). For these papers the author's independent codes, after resolving disagreements by re-reading, are final.
-4. **Evidence trail and open data.** Every code carries a quotation or location; the full coded dataset, AI outputs and verification log are released.
+3. **Independent double coding of sealed subsample (34 papers, 20% subsample).** Before verification started, a random 20% of the eligible papers (drawn with seed 2027) was sealed. The author coded these 34 papers from full texts, completely blinded to the AI's codes and evidence. Disagreements between the author and AI extraction were adjudicated against the full texts.
+4. **Second independent human coder (reliability subsample).** To evaluate human–human inter-rater reliability and strengthen the reliability assessment, a second independent human coder was added following the main analyses. The second coder independently coded the same 34 sealed papers from the full-text PDFs, using the coding guide and the codebook, recording full-text eligibility, study descriptors, items A1–A10 with page numbers and quotations for each code, and flags F1–F3 on the same audit form as the author.
+5. **Agreement statistics and reliability evaluation.** Inter-rater reliability is reported for:
+   - Primary author vs. sealed automated extraction (original independent codes and post-conformance corrections);
+   - Second independent human coder vs. primary author;
+   - Second independent human coder vs. sealed automated extraction.
+   Agreement is summarized with percentage agreement and Cohen's κ (unweighted for items, linearly weighted for ordinal level, and binary for Level 3 vs lower levels), along with 95% percentile bootstrap intervals over papers (2,000 resamples, seed 2028) for full-text eligibility, pooled information-flow items (A1–A6), and Level 3 against lower levels. The second coder's codes were used solely to assess reliability; they did not alter any code in the final data set.
+6. **Evidence trail and open data.** Every code carries a quotation or location; the full coded dataset, AI extraction outputs, second coder's independent codes, and verification/adjudication logs are released.
 
-If κ < 0.6 for any item, its codebook definition is revised and that item is re-checked for all papers. Verification agreement (the share of AI codes the author changed) is also reported, as a descriptive measure of AI extraction quality, not as reliability. The single-human-coder design is stated as a limitation (Section 10b).
+If κ < 0.6 for any item, its codebook definition is revised and that item is re-checked for all papers. Verification agreement (the share of AI codes the author changed during full-text re-check) is also reported as a descriptive measure of automated extraction quality, not as reliability. The scope of dual coding (sealed subsample only) is noted as a limitation (Section 10b).
 
-**Pilot:** before formal coding, the AI codes 10 papers that are not in the sample (from the author's existing collection of forecasting papers), and the author reviews these codes against the full texts. Disagreements and ambiguities are used to refine the codebook. Pilot papers are excluded from the analysis.
+**Pilot:** before formal coding, the AI coded 10 papers not in the sample, and the author reviewed these codes against the full texts to refine the codebook. Pilot papers are excluded from the analysis.
 
-**Drawing the subsample:** the candidate papers of each pool (those with full text, in screening order) are put in a random order (seed 2027). The independently coded subsample is the first 20 S1 and 8 S2 papers in this order that turn out to be eligible and fall within the coded quota. A few extra papers (24 S1, 10 S2) are sealed at the start to allow for exclusions; unused extras are released for normal verification.
+**Drawing the subsample:** candidate papers of each pool (those with full text, in screening order) were placed in random order (seed 2027). The independently coded subsample is the first 20 S1 and 8 S2 papers in this order that turned out eligible (with extra papers sealed at the start to allow for exclusions, yielding the 34 sealed papers).
 
 ### 7.6 Use of AI tools
 A large language model is used (i) to suggest title and abstract screening decisions with a stated reason, (ii) to locate passages in full texts, and (iii) to extract full-text eligibility and audit codes with evidence (Section 7.5). Every screening decision and every audit code is confirmed or corrected by the author against the original record or text. AI use is disclosed in the Methods, the AI is not an author, and the author takes responsibility for all decisions. Agreement between the AI suggestions and the final human decisions is reported for screening (83% S1 and 96% S2 at title/abstract stage) and for coding.
@@ -183,7 +189,7 @@ Public datasets with different behaviour are used: SPEI-6 and SPEI-12 (two stati
 4. **RQ3:** inflation by mechanism × dataset × learner; DM results.
 5. **RQ4 (exploratory):** Fisher's exact / χ² tests and one logistic regression of Level 3 (yes/no) on decomposition use, domain, year and journal quartile. Reported accuracy (R²/NSE where available) is compared across levels with a Kruskal–Wallis test. Results are labelled exploratory, with no multiplicity claims.
 6. Forensic flags F1–F3: frequencies and illustrative anonymised examples.
-7. Reliability: human–AI κ on the independently double-coded 20% subsample; share of AI codes changed during verification.
+7. Reliability: (i) inter-rater agreement between the primary author and sealed automated extraction (Cohen's κ and percentage agreement, uncorrected and after codebook corrections); (ii) inter-rater agreement between the second independent human coder and the primary author, and between second coder and automated extraction, with 95% bootstrap intervals; (iii) proportion of automated codes changed during full-text re-check and author verification.
 
 **Synthesis.** Combine audit prevalence (RQ1–RQ2) with experimental inflation (RQ3) to state how much published accuracy claims could be overstated wherever leakage-prone steps are present.
 
@@ -206,17 +212,25 @@ Without subscription access to most publishers, the audit is restricted to open-
 4. The controlled experiments (RQ3) do not depend on the sample and are unaffected.
 5. If full-text access becomes available, a random sample of non-open-access papers can be added as a sensitivity analysis.
 
-## 10b. Limitation: single human coder
+## 10b. Limitation: single human coder for full sample / second coder on reliability subsample
 
-Screening and coding rely on one human (the author) working with AI assistance, so dual independent human coding (as recommended by PRISMA and Cochrane) is not available. To compensate: the AI extracts codes with evidence for every paper and the author verifies each one against the full text; a random 20% of papers is coded independently by the author without seeing the AI codes, and human–AI agreement (κ) is reported; every code carries an evidence quotation; and the full coded dataset with the verification log is released. A remaining risk is that verification of AI codes is anchored on the AI's reading; the independently coded subsample quantifies how often the AI and an unprompted human disagree. Agreement statistics are reported however favourable or unfavourable they turn out to be.
+The primary audit dataset and verification across the full sample (114 non-sealed papers plus the sealed sample) rely on the lead author working with automated extraction assistance, rather than dual independent human coding across the entire corpus. To mitigate this limitation and assess human–human reliability directly, an independent second human coder was recruited to double-code the 34-paper sealed subsample (20% of the sample) independently from full-text PDFs. Agreement between the second coder and the author was moderate on information-flow items pooled (κ = 0.56) and on Level 3 against lower levels (κ = 0.67), but poor on eligibility (κ = 0.24) with wide bootstrap intervals due to the small subsample size. The remaining 114 eligible studies were coded by the automated tool and verified by the author alone, so dual-human reliability estimates do not cover them. Every code carries quoted evidence, and all verification, adjudication, and coder files are released.
 
 ## 11. Deviations, data and code sharing
 
-Deviations from this protocol will be listed with reasons in the final paper. The screening log, coded audit sheet, experiment code and outputs will be released under an open licence (OSF and GitHub) on submission.
+Deviations from the original protocol (v1.0, 7 October 2026) are documented in the repository history and reported with reasons in Supplementary Material S1.6 of the paper:
+1. **Application fields:** Broadened to all application fields before any screening decisions were confirmed.
+2. **Journal quartiles:** Determined from the 2025 SCImago Journal Rank table rather than publication-year tables.
+3. **Coding conventions and re-check:** Because automated–human agreement fell below κ = 0.6 for several items, coding conventions were formalized in writing, all automated codes were re-checked against complete full texts, and every paper was verified by the author.
+4. **Second independent human coder:** A second independent human coder was added after the main analyses to double-code the 34 sealed papers and provide human–human reliability assessment (Section 7.5).
+5. **Forensic flag F2:** Assessed from reported results without recomputing persistence on raw data.
+6. **Experiments:** Consolidated scaling, smoothing, and selection experiments into Experiment 2 with two horizons.
+
+The screening log, coded audit sheet, reliability and adjudication files (including the second coder's codes), experiment code, and outputs are released under an open licence (OSF and GitHub) on submission.
 
 ## 12. Timeline
 
-Weeks 1–3 search, screening and pilot · weeks 2–6 experiments · weeks 3–8 coding · weeks 3–7 AI extraction, independent human coding of the 20% subsample and verification of all papers, κ · weeks 9–10 analysis · weeks 10–14 writing and submission.
+Weeks 1–3 search, screening and pilot · weeks 2–6 experiments · weeks 3–8 coding · weeks 3–7 AI extraction, independent human coding of the 20% subsample and verification of all papers, κ · weeks 8–9 second independent human coding of sealed subsample · weeks 9–10 analysis · weeks 10–14 writing and submission.
 
 ## References (to be verified and completed)
 
